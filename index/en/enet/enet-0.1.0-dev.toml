@@ -21,6 +21,5 @@ Default_Random = {type = "Enum", values = ["discrete", "null"], default = "discr
 # * "null" - dummy implementation for app that always overrides Net.Utils.Random
 
 [origin]
-commit = "340956d11e335b1015bc17f38ea64f9336047c4c"
-url = "git+https://github.com/reznikmm/ada-enet.git"
-
+commit = "dcba2c55811d86f1ee7404453476cbc146b0641f"
+url = "git+https://github.com/stcarrez/ada-enet.git"
