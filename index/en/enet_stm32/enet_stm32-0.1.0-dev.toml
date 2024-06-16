@@ -1,0 +1,35 @@
+name = "enet_stm32"
+description = "Ethernet driver for STM32"
+version = "0.1.0-dev"
+
+authors = ["Stephane Carrez", "Max Reznik"]
+maintainers = ["Stephane Carrez <Stephane.Carrez@gmail.com>", "Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["stcarrez", "reznikmm"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+[configuration.variables]
+TX_Ring_Size  = {type = "Integer", first = 0, last = 1024, default = 8}
+RX_Ring_Size  = {type = "Integer", first = 0, last = 1024, default = 8}
+Extra_Buffers = {type = "Integer", first = 0, last = 1024, default = 8}
+
+[configuration]
+generate_c = false
+
+[build-switches]
+development.optimization = ["-O0"]
+development.style_checks = ["-gnaty"]
+development.contracts = "Yes"
+
+[[depends-on]]
+enet = "~0.1.0-dev"
+stm32 = "^1.0"
+cortex_m = "~0.6.0-dev"
+hal = "*"
+
+[origin]
+commit = "7848aafec5909cda32d1eb01205873729fa9653e"
+subdir = "./enet_stm32/"
+url = "git+https://github.com/reznikmm/eth_stm32.git"
+
