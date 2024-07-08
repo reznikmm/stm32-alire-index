@@ -1,0 +1,34 @@
+name = "stm32_f4ve"
+description = "Board support for STM32 F4VE"
+version = "0.1.0-dev"
+
+authors = ["Max Reznik"]
+maintainers = ["Max Reznik <reznikmm@gmail.com>"]
+maintainers-logins = ["reznikmm"]
+project-files = ["gnat/stm32_f4ve.gpr"]
+
+[configuration]
+output_dir = "gnat"
+generate_ada = false
+generate_c = false
+
+[build-switches]
+development.optimization = ["-O0"]
+development.style_checks = ["-gnaty"]
+development.contracts = "Yes"
+"*".ada_version = "Ada2022"
+
+[configuration.values]
+cortex_m.core = "m4f"
+
+[[depends-on]]
+hal = "~0.4.0"
+gnat_arm_elf = "*"
+cortex_m = "~0.6.0-dev"
+adl_middleware = "~0.3.0-dev"
+embedded_components = "~0.3.0-dev"
+
+[origin]
+commit = "a7b0a844e94a432a0bd73966f0bd86a14485c9fd"
+url = "git+https://github.com/reznikmm/Ada_Drivers_Library.git"
+
