@@ -1,0 +1,25 @@
+name = "stm32_gui"
+description = "stm32 Graphical User Interface (GUI) utilities"
+version = "0.2.0"
+licenses = "BSD-3-Clause"
+
+authors = ["AdaCore"]
+maintainers = ["Olivier Henley <olivier.henley@gmail.com>"]
+maintainers-logins = ["ohenley"]
+website="https://github.com/GNAT-Academic-Program/stm32_gui"
+tags = ["embedded", "stm32", "gui"]
+
+[[depends-on]]
+hal = "*"
+adl_middleware = "*"
+
+[configuration.values]
+#cortex_m.core = "m4f"
+
+[origin]
+commit = "e2e5c9d4739db390b02a740c77a1fc2a84afa256"
+url = "git+https://github.com/GNAT-Academic-Program/stm32_gui.git"
+
+[[actions]]
+type = "post-fetch"
+command = ["sed", "-i", "-e/stm32_hal/s/^/--/", "stm32_gui.gpr"]
